@@ -41,7 +41,8 @@ module.exports = {
       },
       backgroundImage: {
         gradient1:
-          'linear-gradient(180deg, hsl(210, 88%, 20%),hsl(210, 70%, 58%));',
+          'linear-gradient(180deg, hsl(210, 88%, 20%), hsl(210, 70%, 58%));',
+        gradient2: 'linear-gradient(transparent, hsl(210, 32%, 4%));',
       },
       boxShadow: {
         shadow1: '0 8px 32px hsla(210, 80%, 54%, 0.7)',

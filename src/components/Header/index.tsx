@@ -56,9 +56,27 @@ const Header = () => {
           />
         )}
 
+        <ul className="flex-col items-center hidden 2md:flex 2md:flex-row">
+          {HeaderData.map(item => (
+            <li key={item.id} className="w-full 2md:w-auto">
+              <LinkScroll
+                to={item.id}
+                spy={true}
+                smooth={true}
+                offset={-70}
+                duration={600}
+                className="block w-full py-4 font-medium text-center text-white transition-all duration-300 ease-linear cursor-pointer 2md:w-auto hover:text-primary 2md:px-5"
+                onClick={() => setShowMiniMenu(false)}
+              >
+                {item.title}
+              </LinkScroll>
+            </li>
+          ))}
+        </ul>
+
         <div
           className={clsx(
-            'fixed left-0 top-0 z-50 w-full bg-bodyColor py-14 transition-all duration-500 ease-out 2md:static 2md:translate-y-0 2md:p-0 2md:bg-transparent 2md:w-fit',
+            'fixed left-0 top-0 z-50 w-full bg-bodyColor py-14 transition-all duration-500 ease-out 2md:hidden block',
             {
               'translate-y-0': showMiniMenu,
               '-translate-y-full': !showMiniMenu,
