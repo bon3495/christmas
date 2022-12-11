@@ -107,7 +107,7 @@ const HomeSection = () => {
       id="home"
       ref={homeRef}
     >
-      <h1 className="home__title section__title mt-6 text-center font-dancing text-[48px] leading-tight text-titleColor sm:m-0 sm:text-[56px] lg:text-[80px]">
+      <h1 className="home__title section__title relative z-10 mt-6 text-center font-dancing text-[48px] leading-tight text-titleColor sm:m-0 sm:text-[56px] lg:text-[80px]">
         Merry Christmas
       </h1>
 
