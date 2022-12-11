@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Link as LinkScroll } from 'react-scroll';
 import clsx from 'clsx';
 import { MdClose, MdMenu } from 'react-icons/md';
@@ -38,9 +37,13 @@ const Header = () => {
       )}
     >
       <nav className="container relative flex items-center justify-between h-14">
-        <Link
-          to="/"
-          className="flex items-center text-2xl text-white gap-x-1 font-dancing"
+        <LinkScroll
+          to="home"
+          spy={true}
+          smooth={true}
+          offset={-60}
+          duration={400}
+          className="flex items-center text-2xl text-white cursor-pointer gap-x-1 font-dancing"
         >
           <img
             src={logo}
@@ -48,7 +51,7 @@ const Header = () => {
             className="h-auto w-[30px] -rotate-12 object-cover"
           />
           <span>Christmas</span>
-        </Link>
+        </LinkScroll>
         {showMiniMenu && (
           <div
             className="fixed top-0 bottom-0 left-0 right-0 z-10 bg-transparent"
@@ -63,9 +66,9 @@ const Header = () => {
                 to={item.id}
                 spy={true}
                 smooth={true}
-                offset={-70}
-                duration={600}
-                className="block w-full py-4 font-medium text-center text-white transition-all duration-300 ease-linear cursor-pointer 2md:w-auto hover:text-primary 2md:px-5"
+                offset={-60}
+                duration={400}
+                className="block w-full py-4 font-medium text-center text-white transition-all duration-300 ease-linear cursor-pointer hover:text-primary 2md:w-auto 2md:px-5"
                 onClick={() => setShowMiniMenu(false)}
               >
                 {item.title}
@@ -76,7 +79,7 @@ const Header = () => {
 
         <div
           className={clsx(
-            'fixed left-0 top-0 z-50 w-full bg-bodyColor py-14 transition-all duration-500 ease-out 2md:hidden block',
+            'fixed left-0 top-0 z-50 block w-full bg-bodyColor py-14 transition-all duration-500 ease-out 2md:hidden',
             {
               'translate-y-0': showMiniMenu,
               '-translate-y-full': !showMiniMenu,
@@ -92,7 +95,7 @@ const Header = () => {
                   smooth={true}
                   offset={-70}
                   duration={600}
-                  className="block w-full py-4 font-medium text-center text-white transition-all duration-300 ease-linear cursor-pointer 2md:w-auto hover:text-primary 2md:px-5"
+                  className="block w-full py-4 font-medium text-center text-white transition-all duration-300 ease-linear cursor-pointer hover:text-primary 2md:w-auto 2md:px-5"
                   onClick={() => setShowMiniMenu(false)}
                 >
                   {item.title}
@@ -116,7 +119,7 @@ const Header = () => {
           <img
             src={navImage}
             alt="navbar image no 2"
-            className="absolute right-4 bottom-8 w-[60px] rotate-12 animate-animationSnow2 block 2md:hidden"
+            className="absolute right-4 bottom-8 block w-[60px] rotate-12 animate-animationSnow2 2md:hidden"
           />
         </div>
 
